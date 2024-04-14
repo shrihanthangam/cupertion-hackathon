@@ -21,7 +21,6 @@ app.config['SECRET_KEY'] = os.urandom(24)
 
 # AI
 api_key = keys['openai']
-print(api_key)
 client = OpenAI(api_key=api_key)
 
 @app.route('/')
