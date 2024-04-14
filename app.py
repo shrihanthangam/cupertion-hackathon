@@ -63,7 +63,7 @@ def signup_submit():
         _name  = request.form['username']
         passw = request.form['password']
         
-        details = f"Name: {_name}\nEmail: {email}\nPassword: {passw}"
+        details = f"Name: {_name}"
         session['name'] = _name  # Store name in session
         session['q_num'] = 1  # Set initial value for q_num
         session['basic_data'] = details  # Convert ObjectId to string before storing in session
