@@ -27,6 +27,9 @@
         </div>
     </header>
 
+    <h1 style="text-align: center;">Fitwell - Nutrition</h1>
+
+
     <div id="messages">
         {% for msg in messages %}
             <div class="message {% if msg.sender == 'human' %}person-message{% else %}ai-message{% endif %}">
@@ -45,8 +48,18 @@
                 name="message"
                 placeholder="Type your message here..."
             />
-            <button type="submit" id="submit-button">Send</button>
+            <button name="submit" type="submit" id="submit-button" value="submit">Send</button>
+            <button name="nutrition" type="submit" id="nutri-button" value="nutricion"><img src="{{ url_for('static', filename='assets/nutrition.png') }}" alt="Make a nutrition plan based on current chat" height="30"></button>
         </form>
     </div>
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let msg = urlParams.get("msg");
+
+        if (msg) {
+            alert(msg);
+        }
+    </script>
 </body>
 </html>

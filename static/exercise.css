@@ -4,6 +4,17 @@ body {
     padding: 0;
 }
 
+#nutri-button {
+    border: none;
+    background-color: #fff;
+}
+
+
+#nutri-button:hover {
+    background-color: #b1b1b1;
+}
+
+
 
 .header-container {
     padding-top: 20px; /* Add padding to the top */
