@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from openai import OpenAI
 import json
 
-with open("api.json", "r") as keys:
+with open("keys.json", "r") as keys:
     data = json.load(keys)
 
 app = Flask(__name__)
