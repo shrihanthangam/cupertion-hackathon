@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Page - Fitwell</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='topbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='exercise.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a class="active" href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
+                    
+                    {% if name == None %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('settings') }}">{{name}}</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="messages">
+        {% for msg in messages %}
+            <div class="message {% if msg.sender == 'human' %}person-message{% else %}ai-message{% endif %}">
+                {% for line in msg.message.split('\n') %}
+                    <p>{{line}}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="input-container">
+        <form action="/exercise" method="POST">
+            <input
+                type="text"
+                id="text-input"
+                name="message"
+                placeholder="Type your message here..."
+            />
+            <button type="submit" id="submit-button">Send</button>
+        </form>
+    </div>
+</body>
+</html>

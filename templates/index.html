@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='topbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
+                    {% if name == None %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('settings') }}">{{ name }}</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Welcome to Fitwell</h2>
+                    <p class="hero-description">Your ultimate destination for fitness and wellness.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Fitwell Gym">
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about-us">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <p class="about-description">Fitwell is dedicated to helping individuals achieve their fitness goals by providing top-notch facilities, personalized training programs, and a supportive community environment. Our team of experienced trainers and staff are committed to helping you lead a healthier and happier lifestyle. Whether you're a beginner or a seasoned athlete, Fitwell has everything you need to succeed on your fitness journey.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Fitwell</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='topbar.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Set background color */
+        }
+
+        .data {
+            margin-top: 10%;
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+            
+            background-color: #fff;
+            width: 700px;
+            border: black solid;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+
+        }
+
+        /* Form styles */
+        .signup-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .signup-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff0000; /* Set button color */
+            color: #fff; /* Set text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Add transition effect */
+        }
+
+        .signup-form button:hover {
+            background-color: #b30000; /* Change button color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a class="active" href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{ url_for('exercise') }}">Exercise</a></li>
+                    
+                    {% if name == None %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('settings') }}">{{name}}</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="data">
+        {% for line in data.split("\n") %}
+            <p>{{line}}</p>
+        {% endfor %}
+    </div>
+
+    <!-- Logout form -->
+    <form action="#" method="POST" class="signup-form">
+        <button type="submit">Logout</button>
+    </form>
+
+    <!-- JavaScript to display alert message -->
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let msg = urlParams.get("msg");
+
+        if (msg) {
+            alert(msg);
+        }
+    </script>
+</body>
+</html>

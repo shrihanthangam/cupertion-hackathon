@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.duration-container {
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 50%;
+    border: solid;
+    border-radius: 25px;
+}
+
+/* Style the track */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove the default styling */
+    appearance: none;
+    width: 75%; /* Full-width */
+    height: 10px; /* Height of the track */
+    background-color: #ddd; /* Color of the track */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove the outline */
+    position: relative; /* Position the pseudo-elements relative to the track */
+}
+
+/* Highlighted portion of the track */
+input[type="range"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #4CAF50; /* Color of the highlighted portion */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Style the thumb (handle) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove the default styling */
+    appearance: none;
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    background-color: #4CAF50; /* Color of the thumb */
+    border-radius: 50%; /* Rounded shape */
+    cursor: pointer; /* Cursor style */
+    position: relative; /* Position the thumb */
+    z-index: 1; /* Ensure the thumb is above the pseudo-elements */
+}
+
+/* Add hover effect to the thumb */
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #45a049; /* Darker color on hover */
+}
+
+
+.type-container {
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 50%;
+    border: solid;
+    border-radius: 25px;
+}
+
+.type-container input {
+    width: 75%;
+}
+
+.type-of-work {
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 50%;
+    border: solid;
+    border-radius: 25px;
+}
+
+.type-of-work input {
+    width: 75%;
+}

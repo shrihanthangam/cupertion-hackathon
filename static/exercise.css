@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header-container {
+    padding-top: 20px; /* Add padding to the top */
+}
+
+#messages {
+    max-height: calc(100vh - 200px); /* Adjust as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-bottom: 60px; /* Increase margin to accommodate input container */
+}
+
+.message {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    word-wrap: break-word; /* Allow long words to break */
+}
+
+.ai-message {
+    background-color: lightgray;
+    float: left;
+    padding-right: 20px;
+    clear: both;
+    width: auto * 2; /* Adjust as needed */
+    max-width: 40%;
+}
+
+.person-message {
+    background-color: lightblue;
+    float: right;
+    padding-left: 20px;
+    clear: both;
+    width: auto; /* Adjust as needed */
+    max-width: 40%;
+}
+
+.input-container {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#text-input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+#submit-button {
+    width: 60px;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 20px;
+}
+
+#submit-button:hover {
+    background-color: #0062cc;
+}
